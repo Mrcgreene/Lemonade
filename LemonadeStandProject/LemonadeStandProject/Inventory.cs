@@ -20,6 +20,7 @@ namespace LemonadeStandProject
             Store storePurchase = new Store();
             Customer buyingCustomer = new Customer();
             starterMoney -= storePurchase.moneySpent += buyingCustomer.moneyTakenIn;
+            moneyBalance = starterMoney;
             return moneyBalance;
         }
 

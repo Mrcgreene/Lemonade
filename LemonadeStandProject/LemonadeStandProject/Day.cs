@@ -8,18 +8,10 @@ namespace LemonadeStandProject
 {
     public class Day
     {
-        //public string day1;
-        //public string day2;
-        //public string day3;
-        //public string day4;
-        //public string day5;
-        //public string day6;
-        //public string day7;
         public string dayForecast;
         public int dayTemperature;
         public string theWeather;
         public int visitors;
-
 
         public Day(string DayForecast, int DayTemperature, int Visitors)
         {
@@ -27,9 +19,25 @@ namespace LemonadeStandProject
             dayTemperature = DayTemperature;
             visitors = Visitors;
         }
+        
+        public void TodaysCondition()
+        {
+            Weather skiesView = new Weather();
+            //Customer  
+            skiesView.randomizeTemperature();
+            Console.WriteLine(skiesView.forecast);
+            Console.WriteLine(skiesView.temperature);
+        }
+
+        public void PotentialCustomers()
+        {
+            Weather possibles = new Weather();
+            Customer buddies = new Customer();
+            buddies.GenerateCustomers(possibles.PassingPeople());
+        }   //return or not...how to isolate customers
 
 
-
+        /*
         public string OurWeather()
         {
             for(int i = 0; i < 8; i++)
@@ -38,6 +46,7 @@ namespace LemonadeStandProject
             }
             return theWeather;
         }
+        */
     }
 
 }

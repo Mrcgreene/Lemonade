@@ -16,8 +16,11 @@ namespace LemonadeStandProject
             Game kickStart = new Game();
             kickStart.Greeting();
             kickStart.GameInstruction();
+            kickStart.ItemizedList();
             kickStart.WeatherPrediction();
             kickStart.StoreVisit();
+            Console.ReadLine();
+            kickStart.PlayerSetPrice();
             
         }
 
@@ -50,22 +53,40 @@ namespace LemonadeStandProject
             myView.randomizeTemperature();
         }
 
+        public void ItemizedList()
+        {
+            Inventory goodies = new Inventory();
+            Console.WriteLine("Note: One pitcher will make 10 cups of lemonade.");
+            Console.WriteLine("You currently have " + goodies.CalculateMixLeft() + " " + "cups of mixture to use.");
+            Console.WriteLine("Your remaining money is: " + "$" + goodies.CalculateBalance());
+            Console.ReadLine(); 
+        }
+
         public void StoreVisit()
         {
             Store shoppingCart = new Store();
             shoppingCart.MixturePurchased();
-            Console.ReadLine();
             shoppingCart.MixtureTotal();
-            
         }
 
-         //time between days done how?
+        public void PlayerSetPrice()
+        {
+            Player settingPriceOfCup = new Player();
+            settingPriceOfCup.CupSellPrice();
+       }
+         public void SellSimulation()
+        {
+            //24 second counter to simulate time between days done here how?
+        }
 
-        
+
+
+
+
         //create exit/end game option that remains available at all times
 
         //need to be able to capture popularity based on satisfaction over course of days played
-        
+
 
         /*if balance reachs 0, display game over message with recursion function to and message 
         "would you like to try again y/n?" until yes is selected to use start game function or no to exit game*/

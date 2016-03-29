@@ -48,10 +48,16 @@ namespace LemonadeStandProject
             {
                 Console.WriteLine("Please revisit when you are ready to purchase merchandise.");
             }
+            else
+            {
+                Console.WriteLine("You have entered an invalid response, try again");
+                MixturePurchased();
+            }
                 return moneySpent;
 
             //be sure to have if the amount chosen to buy exceeds your money that message saying not allowable
-            
+            //create a try catch statement at the end to catch the enter button exception on the choice of bundles
+  
         }
         
         public int MixtureTotal()
@@ -72,11 +78,9 @@ namespace LemonadeStandProject
             }
             return totalCupsForMix;
         }
-
-
     }
+        
         //create a list that holds the purchase items with set price packages
-        //use recursion to allow for purchasing more as long as balance is not less than cost of item        
-
+        
     }
 

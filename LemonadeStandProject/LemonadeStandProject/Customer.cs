@@ -28,7 +28,7 @@ namespace LemonadeStandProject
         public List<Customer> GenerateCustomers(int numberOfCustomers)
         {
             List<Customer> visitors = new List<Customer>();
-            for(int person = 0; person < numberOfCustomers; person++)
+            for (int person = 0; person < numberOfCustomers; person++)
             {
                 visitors.Add(new Customer());
             }
@@ -43,10 +43,15 @@ namespace LemonadeStandProject
             return moneyTakenIn;
         }
 
+        
+
         public void PurchaseProbability()
         {
+            // if forecast, goodMood && temperature above or below && cost below  
             //algor for cost and weather factors in purchasing
         }
-
     }
 }
+
+ 
+

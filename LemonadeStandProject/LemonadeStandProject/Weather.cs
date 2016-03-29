@@ -16,7 +16,6 @@ namespace LemonadeStandProject
         public string rain = "Raining:";
         public string hazy = "Hazy:";
 
-        //string[] dayConditions = new string[4] { "Clear & Sunny", "Cloudy", "Rain", "Hazy" };
         Random rand = new Random();
 
         public void randomizeTemperature()
@@ -57,16 +56,39 @@ namespace LemonadeStandProject
                         break;
                     }
             }
-            //return temperature;
+        }
+
+        public int PassingPeople()
+        {
+            Random rand = new Random();
+            Customer siteSeeing = new Customer();
+            if (forecast == clear)
+            {
+                siteSeeing.numberOfVisitors = rand.Next(45, 66);
+                return siteSeeing.numberOfVisitors;
+            }
+            else if (forecast == cloudy)
+            {
+                siteSeeing.numberOfVisitors = rand.Next(30, 45);
+                return siteSeeing.numberOfVisitors;
+            }
+            else if (forecast == rain)
+            {
+                siteSeeing.numberOfVisitors = rand.Next(15, 30);
+                return siteSeeing.numberOfVisitors;
+            }
+            else if (forecast == hazy)
+            {
+                siteSeeing.numberOfVisitors = rand.Next(30, 45);
+                return siteSeeing.numberOfVisitors;
+            }
+            return siteSeeing.numberOfVisitors;
         }
     }
-
-    //(clear & sunny) weather will bring 45 to 65 people pass  
-    //(cloudy) or (hazY) weather will bring 30 to 44 people pass  
-    //(rain) weather will bring 15 to 29 people pass     
+}
 
     //choose to not open stand and play another week due to weather prediction results
-}
+
 
 
 
