@@ -19,14 +19,7 @@ namespace LemonadeStandProject
         //string[] dayConditions = new string[4] { "Clear & Sunny", "Cloudy", "Rain", "Hazy" };
         Random rand = new Random();
 
-        /*public string randomizeForecast()
-        {
-            forecast = dayConditions[rand.Next(0, forecast.Count())];
-            Console.WriteLine("The forecast is " + forecast + " " + "for the day.");
-            return forecast;
-        }*/
-
-        public int randomizeTemperature()
+        public void randomizeTemperature()
         {
             temperature = rand.Next(0, 4);
             switch (temperature)
@@ -34,54 +27,43 @@ namespace LemonadeStandProject
                 case 1:
                     {
                         Console.WriteLine(clear);
+                        forecast = clear;
                         temperature = rand.Next(70, 101);
                         Console.WriteLine(temperature + " degrees");
-                        return temperature;
+                        break;
                     }
                 case 2:
                     {
                         Console.WriteLine(cloudy);
+                        forecast = cloudy;
                         temperature = rand.Next(50, 76);
                         Console.WriteLine(temperature + " degrees");
-                        return temperature;
+                        break;
                     }
                 case 3:
                     {
                         Console.WriteLine(rain);
+                        forecast = rain;
                         temperature = rand.Next(50, 65);
                         Console.WriteLine(temperature + " degrees");
-                        return temperature;
+                        break;
                     }
                 case 4:
                     {
                         Console.WriteLine(hazy);
+                        forecast = hazy;
                         temperature = rand.Next(50, 76);
                         Console.WriteLine(temperature + " degrees");
-                        return temperature;
+                        break;
                     }
-                    
             }
-            return temperature;
-            
+            //return temperature;
         }
-
-
-
-        /*public string todaysPrediction()
-        {
-            Console.WriteLine("Today's it is " + forecast + " " + "with a temperature of " + temperature + " " + "degrees.");
-            return todaysWeather;
-        }*/
-        
-
-        
-
     }
 
-    //A (clear & sunny) weather will bring 45 to 65 people pass and is 60-100 degrees 
-    //B (cloudy) or (hazY) weather will bring 30 to 44 people pass and is 50-75 degrees  
-    //C (rain) weather will bring 15 to 29 people pass and is 50-75 degrees    
-
+    //(clear & sunny) weather will bring 45 to 65 people pass  
+    //(cloudy) or (hazY) weather will bring 30 to 44 people pass  
+    //(rain) weather will bring 15 to 29 people pass     
 
     //choose to not open stand and play another week due to weather prediction results
 }

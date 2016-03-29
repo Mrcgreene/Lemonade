@@ -8,6 +8,16 @@ namespace LemonadeStandProject
 {
     public class Player
     {
-        //double function to adjust amount to sell each cup of lemonade for
+        public double lemonadeCupCharge;
+
+        public double CupSellPrice()
+        {
+            Console.WriteLine("How much will you sell a cup of lemonade for?");
+            lemonadeCupCharge = Convert.ToInt32(Console.ReadLine());
+            return lemonadeCupCharge;
+        }
+        
+
+        
     }
 }

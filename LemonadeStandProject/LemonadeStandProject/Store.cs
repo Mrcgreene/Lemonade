@@ -21,7 +21,7 @@ namespace LemonadeStandProject
         public double MixturePurchased()
         {
             Console.WriteLine("What quantity of mixture would you like to purchase?");
-            Console.WriteLine("(1) 1 Lbs Mix for $3, which is 10 cups and will make 10 pitchers");
+            Console.WriteLine("(1) 1 Lb Mix for $3, which is 10 cups and will make 10 pitchers");
             Console.WriteLine("(2) 2 lbs MIx for $5, which is 20 cups and will make 20 pitchers");
             Console.WriteLine("(3) 5 Lbs Mix for $10, which is 45 cups and will make 45 pitchers");
             Console.WriteLine("(4) None at this time");
@@ -29,7 +29,7 @@ namespace LemonadeStandProject
 
             if (purchaseChoice == 1)
             {
-                Console.WriteLine("You have chosen the 1 Lbs Mix that will cost " + "$" + onePoundMixCost);
+                Console.WriteLine("You have chosen the 1 Lb Mix that will cost " + "$" + onePoundMixCost);
                 moneySpent = onePoundMixCost;
                 return moneySpent;
             } else if(purchaseChoice == 2)
