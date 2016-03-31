@@ -10,9 +10,6 @@ namespace LemonadeStandProject
     {
         public bool lemonadePurchase;
         public int goodMood;
-        public int numberOfVisitors;
-        public double moneyTakenIn;
-        public int numberofCupsBought;
         public double lemonadeCupCharge;
 
         public Customer()
@@ -35,21 +32,11 @@ namespace LemonadeStandProject
             return visitors;
         }
 
-        public double BuyCupLemonade()
-        {
-            //Console.WriteLine("How many cups would you like to buy at " + lemonadeCupCharge + "?");
-            numberofCupsBought = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine(lemonadeCupCharge * numberofCupsBought);
-            return moneyTakenIn;
-        }
+        
 
         
 
-        public void PurchaseProbability()
-        {
-            // if forecast, goodMood && temperature above or below && cost below  
-            //algor for cost and weather factors in purchasing
-        }
+        
     }
 }
 

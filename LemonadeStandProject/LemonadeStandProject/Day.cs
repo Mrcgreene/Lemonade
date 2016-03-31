@@ -12,6 +12,10 @@ namespace LemonadeStandProject
         public int dayTemperature;
         public string theWeather;
         public int visitors;
+        public int numberOfVisitors;
+        public int purchasingCustomers;
+        public int numberofCupsBought;
+        public double moneyTakenIn;
 
         public Day(string DayForecast, int DayTemperature, int Visitors)
         {
@@ -19,34 +23,85 @@ namespace LemonadeStandProject
             dayTemperature = DayTemperature;
             visitors = Visitors;
         }
-        
-        public void TodaysCondition()
-        {
-            Weather skiesView = new Weather();
-            //Customer  
-            skiesView.randomizeTemperature();
-            Console.WriteLine(skiesView.forecast);
-            Console.WriteLine(skiesView.temperature);
-        }
 
-        public void PotentialCustomers()
+     
+        public int CustomerChanceToBuy()
         {
-            Weather possibles = new Weather();
             Customer buddies = new Customer();
-            buddies.GenerateCustomers(possibles.PassingPeople());
-        }   //return or not...how to isolate customers
+            Stand ourCupPricing = new Stand();
 
+            buddies.GenerateCustomers(CustomerCountByWeather());
+            //for loop
+            if(buddies.goodMood >= 5 && ourCupPricing.lemonadeCupCharge < .75)
+            {
+                //buy
+                return purchasingCustomers;
+            }
+            if(buddies.goodMood >= 5 && ourCupPricing.lemonadeCupCharge >= .75)
+            {
+                //pass
+            }
+            if (buddies.goodMood >= 5 && ourCupPricing.lemonadeCupCharge < .35)
+            {
+                Console.WriteLine("Great price!");
+            }
+            if (buddies.goodMood < 5 && ourCupPricing.lemonadeCupCharge < .35)
+            {
+                //buy
+                return purchasingCustomers;
+            }
+            if (buddies.goodMood < 5 && ourCupPricing.lemonadeCupCharge >= .35)
+            {
+                //pass
+            }
+            return purchasingCustomers;
+        }  
+        
+
+        public List<string> buyingCustomers = new List<string>();
+        public List<string> notBuyingCustomers = new List<string>();
+
+        public int CustomerCountByWeather()
+        {
+            Random rand = new Random();
+            Weather weather1 = new Weather();
+            
+            if (weather1.forecast == weather1.clear)
+            {
+                numberOfVisitors = rand.Next(45, 66);
+                return numberOfVisitors;
+            }
+            else if (weather1.forecast == weather1.cloudy)
+            {
+                numberOfVisitors = rand.Next(30, 45);
+                return numberOfVisitors;
+            }
+            else if (weather1.forecast == weather1.rain)
+            {
+                numberOfVisitors = rand.Next(15, 30);
+                return numberOfVisitors;
+            }
+            else if (weather1.forecast == weather1.hazy)
+            {
+                numberOfVisitors = rand.Next(30, 45);
+                return numberOfVisitors;
+            }
+            return numberOfVisitors;
+        }
 
         /*
-        public string OurWeather()
+        public double BuyCupLemonade()
         {
-            for(int i = 0; i < 8; i++)
-            {
-                //break the days out and print each
-            }
-            return theWeather;
+            numberofCupsBought = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine(lemonadeCupCharge * numberofCupsBought);
+            return moneyTakenIn;
         }
-        */
+            */
+        public void MoneyIntakeForDay()
+        {
+            
+        }
+        
     }
 
 }

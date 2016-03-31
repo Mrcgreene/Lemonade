@@ -15,7 +15,7 @@ namespace LemonadeStandProject
         public string cloudy = "Cloudy:";
         public string rain = "Raining:";
         public string hazy = "Hazy:";
-
+        
         Random rand = new Random();
 
         public void randomizeTemperature()
@@ -58,32 +58,7 @@ namespace LemonadeStandProject
             }
         }
 
-        public int PassingPeople()
-        {
-            Random rand = new Random();
-            Customer siteSeeing = new Customer();
-            if (forecast == clear)
-            {
-                siteSeeing.numberOfVisitors = rand.Next(45, 66);
-                return siteSeeing.numberOfVisitors;
-            }
-            else if (forecast == cloudy)
-            {
-                siteSeeing.numberOfVisitors = rand.Next(30, 45);
-                return siteSeeing.numberOfVisitors;
-            }
-            else if (forecast == rain)
-            {
-                siteSeeing.numberOfVisitors = rand.Next(15, 30);
-                return siteSeeing.numberOfVisitors;
-            }
-            else if (forecast == hazy)
-            {
-                siteSeeing.numberOfVisitors = rand.Next(30, 45);
-                return siteSeeing.numberOfVisitors;
-            }
-            return siteSeeing.numberOfVisitors;
-        }
+        
     }
 }
 
